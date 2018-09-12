@@ -1,0 +1,13 @@
+---
+  displayname: JerseySu
+  message: Super Song, I love DevOps, I love testing. 我是哲西 我熱愛 DevOps 和測試
+  skills:
+      - python
+      - ruby
+      - java
+      - Swift
+  tools: 
+      - TravisCI
+      - Jenkins
+      - Chef
+      - Docker
