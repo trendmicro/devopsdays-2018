@@ -1,0 +1,16 @@
+---
+  displayname: Sammy
+  message: UmboCV 的 SRE 及 Backend 徵才中唷~~~~ (借打廣告 XD
+  skills:
+      - python
+      - javascript
+      - golang
+  tools:
+      - AWS
+      - Ansible
+      - Jenkins
+      - Graphite
+      - ELK
+      - MySQL
+      - MongoDB
+      - Kubernets
