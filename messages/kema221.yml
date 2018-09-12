@@ -1,0 +1,10 @@
+displayname: kema221
+  message: DevOps2018 makes me fearless in the future.
+  skills:
+      - python
+      - c#
+      - javascript
+  tools: 
+      - Ansible
+      - Jenkins
+      - Gitlab
