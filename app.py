@@ -25,13 +25,13 @@ def check_pr(pr):
     # check number of file
     print(files) 
     if len(files) != 1:
-        return False
+        return False, '咦？你是不是不只改了一個檔案？'
 
     # check file status
     print(files[0].status)
     if files[0].status != 'added':
         print(files[0].status)
-        return False
+        return False, '只能新增檔案喔！'
 
     # check filename
     login = pr.user.login 
@@ -43,7 +43,7 @@ def check_pr(pr):
     print(filename)
     print(login_yml)
     if filename != login_yml:
-        return False
+        return False, '你的 YAML 檔名是不是跟 username 不一樣呢？'
 
     # check yaml format
     print(files[0].raw_url)
@@ -52,13 +52,13 @@ def check_pr(pr):
         try:
             data = yaml.load(stream)
             if not data.get('displayname') or not data.get('message'):
-                return False
+                return False, '請留下你的 displayname 和 message，謝謝！'
         except yaml.YAMLError as exc:
             print(exc)
-            return False
+            return False, 'YAML 檔案讀取錯誤，請確定格式是否正確唷！'
     os.remove(filename)
 
-    return True
+    return True, ''
 
 @app.route('/', methods=["GET", "POST"])
 def index():
@@ -68,11 +68,12 @@ def index():
             repo = g.get_repo(payload['repository']['id'])
             pr_number = payload['number']
             pr = repo.get_pull(pr_number)
-            if check_pr(pr):
-                pr.as_issue().create_comment('This is good.')
+            is_ok, error_msg = check_pr(pr)
+            if is_ok:
+                pr.as_issue().create_comment('This is good. Nice to meet you :)')
                 pr.merge()
             else:
-                pr.as_issue().create_comment('Something wrong.')
+                pr.as_issue().create_comment(error_msg)
             return ''
 
     messages = []
