@@ -41,7 +41,7 @@ Demo 網址：https://2018devopsdays.trendops.co/
 
 5. 如果驗證成功，等待數秒鐘則會自動 merge。不成功的話，請確定是否符合上述規則並 close pull request，待修改完成後 reopen pull request。（如果持續不成功的話，請洽現場趨勢科技攤位處理。）
 
-6. 大功告成！感謝您的參與～請前往 [Demo 網站](https://2018devopsdays.trendops.co/ ) 看看自己的留言是否有出現在頁面上。
+6. 大功告成！感謝您的參與～請前往 [Demo 網站](https://2018devopsdays.trendops.co/ ) 三分鐘左右就可以看到自己的留言囉!
 
 7. 領獎方式：<br>
     * 確認在我們的 Demo 網站上有看到您的留言和署名<br>
