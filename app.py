@@ -95,7 +95,7 @@ def index():
                 messages.append({
                     'message': data['message'],
                     'display_name': data['displayname'],
-                    'username': f.replace("messages/", "").replace(".yml", "")
+                    'username': f.replace("messages/", "").replace(".yaml", "")
                 })
             except yaml.YAMLError as exc:
                 print(exc)
